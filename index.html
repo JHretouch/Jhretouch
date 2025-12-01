@@ -793,47 +793,54 @@
 
       <div class="contact-grid">
         <form action="https://formspree.io/f/mvgeggbv" method="POST">
-          <div>
-            <label for="name">Your name</label>
-            <input id="name" type="text" placeholder="e.g. John Smith" required />
-          </div>
-          <div>
-            <label for="email">Email or preferred contact</label>
-            <input id="email" type="text" placeholder="e.g. your email or Telegram / WhatsApp" required />
-          </div>
-          <div>
-            <label for="type">Type of images</label>
-            <input id="type" type="text" placeholder="Beauty, Fashion, Product, Lookbook..." />
-          </div>
-          <div>
-            <label for="message">Project details</label>
-            <textarea id="message" placeholder="Number of images, deadline, style reference, special requests..."></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit request</button>
-        </form>
+  <div>
+    <label for="name">Your Name</label>
+    <input
+      name="name"
+      id="name"
+      type="text"
+      placeholder="Example: John Doe"
+      required
+    />
+  </div>
 
-        <div class="contact-meta">
-          <p><strong>Direct contact:</strong></p>
-          <p>Email: <strong>jun.retouch@gmail.com</strong></p>
-          <p>Instagram: <a href="https://www.instagram.com/jh_retoucher/" target="_blank">@jh_retoucher</a></p>
-          <p><strong>Working hours:</strong><br />09:00 – 22:00 (GMT+7, Monday – Sunday)</p>
-          <p>Usually replies within a few working hours.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div>
+    <label for="email">Email</label>
+    <input
+      name="email"
+      id="email"
+      type="email"
+      placeholder="Your email"
+      required
+    />
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span>© 2025 JH Retouch Studio – All rights reserved.</span>
-        <span>Crafted by JH Retoucher</span>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+  <div>
+    <label for="type">Image Type</label>
+    <input
+      name="image_type"
+      id="type"
+      type="text"
+      placeholder="Beauty, Fashion, Product, Lookbook..."
+    />
+  </div>
+
+  <div>
+    <label for="message">Project Details</label>
+    <textarea
+      name="message"
+      id="message"
+      placeholder="Number of images, deadline, reference style, special requests..."
+    ></textarea>
+  </div>
+
+  <!-- hidden field to identify source -->
+  <input type="hidden" name="source" value="Landing Page – JH Retoucher" />
+
+  <button class="btn btn-primary" type="submit">Send Request</button>
+</form>
+
+
 
 
 
