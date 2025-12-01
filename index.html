@@ -792,55 +792,29 @@
       </div>
 
       <div class="contact-grid">
-        <form action="https://formspree.io/f/mvgeggbv" method="POST">
+        <form
+  action="https://formspree.io/f/mvgeggbv"
+  method="POST"
+>
   <div>
-    <label for="name">Your Name</label>
-    <input
-      name="name"
-      id="name"
-      type="text"
-      placeholder="Example: John Doe"
-      required
-    />
+    <label for="name">Your name</label>
+    <input id="name" type="text" name="name" placeholder="e.g. John Doe" required />
   </div>
-
   <div>
     <label for="email">Email</label>
-    <input
-      name="email"
-      id="email"
-      type="email"
-      placeholder="Your email"
-      required
-    />
+    <input id="email" type="email" name="email" placeholder="your@email.com" required />
   </div>
-
   <div>
-    <label for="type">Image Type</label>
-    <input
-      name="image_type"
-      id="type"
-      type="text"
-      placeholder="Beauty, Fashion, Product, Lookbook..."
-    />
+    <label for="type">Image type</label>
+    <input id="type" type="text" name="image_type" placeholder="Beauty, Fashion, Product..." />
   </div>
-
   <div>
-    <label for="message">Project Details</label>
-    <textarea
-      name="message"
-      id="message"
-      placeholder="Number of images, deadline, reference style, special requests..."
-    ></textarea>
+    <label for="message">Project details</label>
+    <textarea id="message" name="message" placeholder="Number of photos, deadline, style..."></textarea>
   </div>
 
-  <!-- hidden field to identify source -->
-  <input type="hidden" name="source" value="Landing Page – JH Retoucher" />
+  <!-- optional hidden field: where the lead comes from -->
+  <input type="hidden" name="source" value="Landing page - jhretoucher" />
 
   <button class="btn btn-primary" type="submit">Send Request</button>
 </form>
-
-
-
-
-
