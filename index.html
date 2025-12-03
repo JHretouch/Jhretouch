@@ -380,7 +380,8 @@
       font-weight: 400;
     }
 
-    .pricing-card ul {
+    .pricing-card ul,
+    .card ul {
       list-style: none;
       margin: 0.75rem 0 1.1rem;
       padding-left: 0;
@@ -388,7 +389,8 @@
       color: var(--muted);
     }
 
-    .pricing-card ul li {
+    .pricing-card ul li,
+    .card ul li {
       margin-bottom: 0.4rem;
     }
 
@@ -496,6 +498,38 @@
       flex-wrap: wrap;
     }
 
+    /* Floating Instagram button */
+    .floating-instagram {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 100;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 30%, #f97316, #ec4899, #8b5cf6);
+      color: #f9fafb;
+      text-decoration: none;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+
+    .floating-instagram:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.95);
+      opacity: 0.95;
+    }
+
+    .floating-instagram svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
     /* Responsive */
     @media (max-width: 960px) {
       .hero-grid,
@@ -531,32 +565,7 @@
       section {
         padding: 2.5rem 0;
       }
-    .floating-instagram {
-  position: fixed;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  z-index: 100;
-  width: 52px;
-  height: 52px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 0.9rem;
-  background: radial-gradient(circle at 30% 30%, #f97316, #ec4899, #8b5cf6);
-  color: #f9fafb;
-  text-decoration: none;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-}
-
-.floating-instagram:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.95);
-  opacity: 0.95;
-}
+    }
   </style>
 </head>
 <body>
@@ -692,7 +701,6 @@
 
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <!-- Replace image -->
           <img src="https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beauty" />
           <div class="portfolio-badge">
             <span>Beauty campaign</span>
@@ -817,73 +825,96 @@
       </div>
 
       <div class="contact-grid">
-       <form action="https://formspree.io/f/mvgeggbv" method="POST">
-  <div>
-    <label for="name">Your name</label>
-    <input
-      id="name"
-      type="text"
-      name="client_name"
-      placeholder="Eg: John Doe"
-      required
-    />
-  </div>
+        <form action="https://formspree.io/f/mvgeggbv" method="POST">
+          <div>
+            <label for="name">Your name</label>
+            <input
+              id="name"
+              type="text"
+              name="client_name"
+              placeholder="Eg: John Doe"
+              required
+            />
+          </div>
 
-  <div>
-    <label for="email">Email / WhatsApp</label>
-    <input
-      id="email"
-      type="text"
-      name="contact"
-      placeholder="Your email or WhatsApp number"
-      required
-    />
-  </div>
+          <div>
+            <label for="email">Email / WhatsApp</label>
+            <input
+              id="email"
+              type="text"
+              name="contact"
+              placeholder="Your email or WhatsApp number"
+              required
+            />
+          </div>
 
-  <div>
-    <label for="type">Photo type</label>
-    <input
-      id="type"
-      type="text"
-      name="photo_type"
-      placeholder="Beauty, Fashion, Product..."
-    />
-  </div>
+          <div>
+            <label for="type">Photo type</label>
+            <input
+              id="type"
+              type="text"
+              name="photo_type"
+              placeholder="Beauty, Fashion, Product..."
+            />
+          </div>
 
-  <!-- Ô mới: khách gửi link ảnh -->
-  <div>
-    <label for="imageLink">Image link</label>
-    <input
-      id="imageLink"
-      type="url"
-      name="image_link"
-      placeholder="Google Drive / Dropbox / WeTransfer link..."
-    />
-  </div>
+          <div>
+            <label for="imageLink">Image link</label>
+            <input
+              id="imageLink"
+              type="url"
+              name="image_link"
+              placeholder="Google Drive / Dropbox / WeTransfer link..."
+            />
+          </div>
 
-  <div>
-    <label for="message">Project details</label>
-    <textarea
-      id="message"
-      name="project_details"
-      placeholder="Number of images, deadline, retouch level (Basic / Model / High-End)..."
-    ></textarea>
-  </div>
+          <div>
+            <label for="message">Project details</label>
+            <textarea
+              id="message"
+              name="project_details"
+              placeholder="Number of images, deadline, retouch level (Basic / Model / High-End)..."
+            ></textarea>
+          </div>
 
-  <!-- optional: tiêu đề email -->
-  <input type="hidden" name="_subject" value="New retouch request from landing page" />
+          <input type="hidden" name="_subject" value="New retouch request from landing page" />
 
-  <button class="btn btn-primary" type="submit">Send request</button>
-</form>
-<a
-  href="https://www.instagram.com/jh_retoucher/"
-  class="floating-instagram"
-  target="_blank"
-  rel="noopener"
->
-  IG
-</a>
+          <button class="btn btn-primary" type="submit">Send request</button>
+        </form>
 
+        <div class="contact-meta">
+          <p><strong>Direct contact:</strong></p>
+          <p>Email: <a href="mailto:jun.retouch@gmail.com">jun.retouch@gmail.com</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/jh_retoucher/" target="_blank" rel="noopener">@jh_retoucher</a></p>
+          <p><strong>Working hours:</strong> usually reply within a few working hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2025 JH Retouch Studio – All rights reserved.</span>
+        <span>Made by JH Retoucher</span>
+      </div>
+    </div>
+  </footer>
 
-
+  <!-- Floating Instagram Button -->
+  <a
+    href="https://www.instagram.com/jh_retoucher/"
+    class="floating-instagram"
+    target="_blank"
+    rel="noopener"
+    aria-label="Open Instagram profile"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="17" cy="7" r="1.2"></circle>
+    </svg>
+  </a>
+</body>
+</html>
