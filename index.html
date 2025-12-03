@@ -531,7 +531,32 @@
       section {
         padding: 2.5rem 0;
       }
-    }
+    .floating-instagram {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: radial-gradient(circle at 30% 30%, #f97316, #ec4899, #8b5cf6);
+  color: #f9fafb;
+  text-decoration: none;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.floating-instagram:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.95);
+  opacity: 0.95;
+}
   </style>
 </head>
 <body>
@@ -792,33 +817,72 @@
       </div>
 
       <div class="contact-grid">
-        <form
-  action="https://formspree.io/f/mvgeggbv"
-  method="POST"
->
+       <form action="https://formspree.io/f/mvgeggbv" method="POST">
   <div>
     <label for="name">Your name</label>
-    <input id="name" type="text" name="name" placeholder="e.g. John Doe" required />
+    <input
+      id="name"
+      type="text"
+      name="client_name"
+      placeholder="Eg: John Doe"
+      required
+    />
   </div>
+
   <div>
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" placeholder="your@email.com" required />
+    <label for="email">Email / WhatsApp</label>
+    <input
+      id="email"
+      type="text"
+      name="contact"
+      placeholder="Your email or WhatsApp number"
+      required
+    />
   </div>
+
   <div>
-    <label for="type">Image type</label>
-    <input id="type" type="text" name="image_type" placeholder="Beauty, Fashion, Product..." />
+    <label for="type">Photo type</label>
+    <input
+      id="type"
+      type="text"
+      name="photo_type"
+      placeholder="Beauty, Fashion, Product..."
+    />
   </div>
+
+  <!-- Ô mới: khách gửi link ảnh -->
+  <div>
+    <label for="imageLink">Image link</label>
+    <input
+      id="imageLink"
+      type="url"
+      name="image_link"
+      placeholder="Google Drive / Dropbox / WeTransfer link..."
+    />
+  </div>
+
   <div>
     <label for="message">Project details</label>
-    <textarea id="message" name="message" placeholder="Number of photos, deadline, style..."></textarea>
+    <textarea
+      id="message"
+      name="project_details"
+      placeholder="Number of images, deadline, retouch level (Basic / Model / High-End)..."
+    ></textarea>
   </div>
 
-  <!-- optional hidden field: where the lead comes from -->
-  <input type="hidden" name="source" value="Landing page - jhretoucher" />
+  <!-- optional: tiêu đề email -->
+  <input type="hidden" name="_subject" value="New retouch request from landing page" />
 
-  <button class="btn btn-primary" type="submit">Send Request</button>
+  <button class="btn btn-primary" type="submit">Send request</button>
 </form>
-
+<a
+  href="https://www.instagram.com/jh_retoucher/"
+  class="floating-instagram"
+  target="_blank"
+  rel="noopener"
+>
+  IG
+</a>
 
 
 
